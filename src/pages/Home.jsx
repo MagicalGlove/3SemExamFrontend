@@ -42,6 +42,7 @@ function Home(props) {
 
                     1. Do something
                 </p>
+                <h2>YAY</h2>
             </div>
 
         </div>

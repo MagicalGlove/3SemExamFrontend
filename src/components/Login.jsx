@@ -12,8 +12,8 @@ function Login({setLoggedIn, setErrorMsg, setUsername, setRoles}) {
 
     const login = (user, pass) => {
         facade.login(user, pass, setRoles)
-            .then(setLoggedIn(true))
-            .then(setUsername(user))
+            .then(res => {setLoggedIn(true)
+                setUsername(user)})
 
     }
 
