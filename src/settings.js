@@ -1,5 +1,6 @@
 function URL(){
-    return "https://kurisu-da-noda.com/CA2-startcode"
+    // return "https://magical-glove.com/3SemExamBackend"
+    return "http://localhost:8080"
 }
 
 export default URL()

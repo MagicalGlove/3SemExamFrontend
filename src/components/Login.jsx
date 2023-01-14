@@ -14,7 +14,6 @@ function Login({setLoggedIn, setErrorMsg, setUsername, setRoles}) {
         facade.login(user, pass, setRoles)
             .then(res => {setLoggedIn(true)
                 setUsername(user)})
-
     }
 
     const onChange = (evt) => {
