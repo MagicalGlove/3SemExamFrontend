@@ -1,0 +1,13 @@
+
+.homepageText {
+    margin: 2rem;
+    background-color: azure;
+}
+
+.homepageTextDiv{
+    margin-left: 2rem;
+}
+
+.cursive{
+    font-style: italic;
+}
