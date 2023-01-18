@@ -28,22 +28,22 @@ function Admin(props) {
                     <form>
                         <label>
                             Name:
-                            <input type="text" name="name" value={dog.name} onChange={handleChange}/>
+                            <input type="text" name="name" placeholder="Fluffy" value={dog.name} onChange={handleChange}/>
                         </label>
                         <br/>
                         <label>
                             Breed:
-                            <input type="text" name="breed" value={dog.breed} onChange={handleChange}/>
+                            <input type="text" name="breed" placeholder="Maltese" value={dog.breed} onChange={handleChange}/>
                         </label>
                         <br/>
                         <label>
                             Image:
-                            <input type="text" name="image" value={dog.image} onChange={handleChange}/>
+                            <input type="text" name="image" placeholder="Example.com/dog.jpg" value={dog.image} onChange={handleChange}/>
                         </label>
                         <br/>
                         <label>
                             Gender:
-                            <input type="text" name="gender" value={dog.gender} onChange={handleChange}/>
+                            <input type="text" name="gender" placeholder="Male/Female" value={dog.gender} onChange={handleChange}/>
                         </label>
                         <br/>
                         <label>
@@ -61,7 +61,7 @@ function Admin(props) {
                                 <p>Breed: {dog.breed}</p>
                                 <p>Gender: {dog.gender}</p>
                                 <p>Birthday: {dog.birthday}</p>
-                                <img src={dog.image} title={dog.image}/>
+                                <img style={{minWidth: '150px',maxWidth: '150px'}} src={dog.image} title={dog.image}/>
                             </span>
                         </span>
 
