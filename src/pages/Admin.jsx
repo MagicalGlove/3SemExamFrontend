@@ -39,7 +39,7 @@ function Admin(props) {
 
     return (
         <div className="createDogDiv">
-            <h1 style={{marginLeft: '2.5%'}}>Create a new dog!</h1>
+            <h1 style={{marginLeft: '2.5%'}}>Create or Update a dog!</h1>
             <div className="outerDiv">
                 <div className="inputBox">
                     <form>
