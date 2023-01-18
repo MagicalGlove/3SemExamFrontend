@@ -7,6 +7,12 @@ function Walkers(props) {
     const [dogs, setDogs] = useState("");
     const [ownerId, setOwnerId] = useState("");
 
+    useEffect(() => {
+        // console.log("Yay, I'm here!")
+        MainFacade.fetchDogsFromOwnerId(0)
+            .then(res => setDogs(res))
+    }, []);
+
     const handleSubmit = e => {
         e.preventDefault();
         MainFacade.fetchDogsFromOwnerId(ownerId)
@@ -38,7 +44,7 @@ function Walkers(props) {
                                 <p>Breed: {dog.breed}</p>
                                 <p>Gender: {dog.gender}</p>
                                 <p>Birthday: {dog.birthday}</p>
-                                <img style={{maxWidth: '150px'}} src={dog.image} title={dog.image}/>
+                                <img style={{maxWidth: '150px', maxHeight: '150px', minHeight: '150px'}} src={dog.image} title={dog.image}/>
                                 <p style={{fontSize: '10px'}}>{dog.id}</p>
                                 <button className="deleteButton" value={dog.id} onClick={deleteDog}>Delete</button>
                             </span>
