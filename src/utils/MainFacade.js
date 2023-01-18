@@ -21,10 +21,17 @@ function MainFacade() {
         return fetch(URL + "/api/owner/dogs/" + id, options).then(handleHttpErrors);
     }
 
+    const createDog = (dog) => {
+        const options = apiFacade.makeOptions("POST", true, dog);
+        return fetch (URL + "/api/dog", options).then(handleHttpErrors)
+
+    }
+
 
     return {
         fetchWalkers,
-        fetchDogsFromOwnerId
+        fetchDogsFromOwnerId,
+        createDog
 
     }
 }

@@ -1,0 +1,11 @@
+.createDogDiv {
+    float: left;
+    margin-right: 10px; /* this will add a 10px gap between the two divs */
+}
+
+/*.parent{*/
+/*    display: flex;*/
+/*}*/
+/*.child {*/
+/*    margin-right: 10px;*/
+/*}*/
