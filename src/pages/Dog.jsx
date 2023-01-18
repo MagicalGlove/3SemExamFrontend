@@ -1,35 +1,39 @@
 import React, {useEffect, useState} from 'react';
 import MainFacade from "../utils/MainFacade.js";
 import "../styles/overallstyling.css"
-import {Link, NavLink, Outlet} from "react-router-dom";
+import "../styles/dog.css"
 
 function Walkers(props) {
     const [dogs, setDogs] = useState("");
     const [ownerId, setOwnerId] = useState("");
 
-
-    useEffect(() => {
-        // console.log("Yay, I'm here!")
-        MainFacade.fetchDogsFromOwnerId()
+    const handleSubmit = e => {
+        e.preventDefault();
+        MainFacade.fetchDogsFromOwnerId(ownerId)
             .then(res => setDogs(res))
-    }, [ownerId]);
-
-    console.log("Im the dogs ", dogs)
+    }
 
     return (
-        <div>
+        <div className="outDiv">
             <h1 style={{marginLeft: '20px'}}>Find all the dogs of an owner!</h1>
-            {walkers.length > 0 ?
+            <form onSubmit={handleSubmit}>
+                <label>
+                    <input type="text" placeholder="Owner Id" value={ownerId} onChange={e => setOwnerId(e.target.value)} />
+                </label>
+                <br/>
+                <input type="submit" value="Submit" />
+            </form>
+            {dogs.length > 0 ?
                 <>
-                    {walkers.map((walker, index) => (
+                    {dogs.map((dog, index) => (
                         <span key={index}>
                             <span className="walkerCards">
-                                <h2>{walker.name}</h2>
-
-                                <p>Address: {walker.address}</p>
-                                <p>Phone Number: {walker.phone}</p>
-                                <p style={{fontSize: '10px'}}>{walker.id}</p>
-
+                                <h2>{dog.name}</h2>
+                                <p>Breed: {dog.breed}</p>
+                                <p>Gender: {dog.gender}</p>
+                                <p>Birthday: {dog.birthday}</p>
+                                <img src={dog.image} title={dog.image}/>
+                                <p style={{fontSize: '10px'}}>{dog.id}</p>
                             </span>
                         </span>
                     ))
