@@ -16,6 +16,7 @@ function Walkers(props) {
     return (
         <div className="outDiv">
             <h1 style={{marginLeft: '20px'}}>Find all the dogs of an owner!</h1>
+            <h2 style={{marginLeft: '20px'}}>Type 0 to get all dogs!</h2>
             <form onSubmit={handleSubmit}>
                 <label>
                     <input type="text" placeholder="Owner Id" value={ownerId} onChange={e => setOwnerId(e.target.value)} />
@@ -24,7 +25,7 @@ function Walkers(props) {
                 <input type="submit" value="Submit" />
             </form>
             {dogs.length > 0 ?
-                <>
+                <div>
                     {dogs.map((dog, index) => (
                         <span key={index}>
                             <span className="walkerCards">
@@ -38,7 +39,7 @@ function Walkers(props) {
                         </span>
                     ))
                     }
-                </>
+                </div>
                 :
                 <div>
                     <h1>
