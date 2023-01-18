@@ -4,20 +4,21 @@ import "../styles/overallstyling.css"
 import {Link, NavLink, Outlet} from "react-router-dom";
 
 function Walkers(props) {
-    const [walkers, setWalkers] = useState("");
+    const [dogs, setDogs] = useState("");
+    const [ownerId, setOwnerId] = useState("");
 
 
     useEffect(() => {
         // console.log("Yay, I'm here!")
-        MainFacade.fetchWalkers()
-            .then(res => setWalkers(res))
-    }, []);
+        MainFacade.fetchDogsFromOwnerId()
+            .then(res => setDogs(res))
+    }, [ownerId]);
 
-    console.log("Im the walkers ", walkers)
+    console.log("Im the dogs ", dogs)
 
     return (
         <div>
-            <h1 style={{marginLeft: '20px'}}>All Walkers</h1>
+            <h1 style={{marginLeft: '20px'}}>Find all the dogs of an owner!</h1>
             {walkers.length > 0 ?
                 <>
                     {walkers.map((walker, index) => (
@@ -37,7 +38,7 @@ function Walkers(props) {
                 :
                 <div>
                     <h1>
-                        There are no walkers!
+                        There are no dogs!
                     </h1>
                 </div>
             }

@@ -16,9 +16,15 @@ function MainFacade() {
         return fetch(URL + "/api/walker/all", options).then(handleHttpErrors);
     }
 
+    const fetchDogsFromOwnerId = (id) => {
+        const options = apiFacade.makeOptions("GET", true);
+        return fetch(URL + "/api/owner/dogs/" + id, options).then(handleHttpErrors);
+    }
+
 
     return {
-        fetchWalkers
+        fetchWalkers,
+        fetchDogsFromOwnerId
 
     }
 }

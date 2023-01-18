@@ -2,7 +2,7 @@ import React, {useRef, useState} from 'react';
 import {Route, Routes} from "react-router-dom";
 import Home from "./pages/Home.jsx";
 import Walkers from "./pages/Walkers.jsx";
-import Contact from "./pages/Contact.jsx";
+import Dog from "./pages/Dog.jsx";
 import Header from "./components/Header.jsx";
 import User from "./pages/User.jsx";
 import Admin from "./pages/Admin.jsx";
@@ -28,7 +28,7 @@ function App(props) {
             <Routes>
                 <Route path="/" element={<Home/>}/>
                 <Route path="walkers" element={<Walkers/>}/>
-                <Route path="contact" element={<Contact address={obj}/>}/>
+                <Route path="dogs" element={<Dog/>}/>
                 <Route path="jokes" element={<Jokes/>}/>
                 <Route path="user" element={<User/>}/>
                 <Route path="admin" element={<Admin/>}/>
