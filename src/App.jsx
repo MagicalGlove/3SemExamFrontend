@@ -1,7 +1,7 @@
 import React, {useRef, useState} from 'react';
 import {Route, Routes} from "react-router-dom";
 import Home from "./pages/Home.jsx";
-import Search from "./pages/Search.jsx";
+import Walkers from "./pages/Walkers.jsx";
 import Contact from "./pages/Contact.jsx";
 import Header from "./components/Header.jsx";
 import User from "./pages/User.jsx";
@@ -27,7 +27,7 @@ function App(props) {
             <Header username={username} setUsername={setUsername} setLoggedIn={setLoggedIn} loggedIn={loggedIn} roles={roles} setRoles={setRoles}/>
             <Routes>
                 <Route path="/" element={<Home/>}/>
-                <Route path="search" element={<Search/>}/>
+                <Route path="walkers" element={<Walkers/>}/>
                 <Route path="contact" element={<Contact address={obj}/>}/>
                 <Route path="jokes" element={<Jokes/>}/>
                 <Route path="user" element={<User/>}/>
