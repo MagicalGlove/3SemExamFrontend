@@ -13,16 +13,21 @@ function Walkers(props) {
             .then(res => setDogs(res))
     }
 
+    const deleteDog = (evt) => {
+        MainFacade.deleteDog(evt.target.value)
+    }
+
     return (
         <div className="outDiv">
             <h1 style={{marginLeft: '20px'}}>Find all the dogs of an owner!</h1>
             <h2 style={{marginLeft: '20px'}}>Type 0 to get all dogs!</h2>
             <form onSubmit={handleSubmit}>
                 <label>
-                    <input type="text" placeholder="Owner Id" value={ownerId} onChange={e => setOwnerId(e.target.value)} />
+                    <input type="text" placeholder="Owner Id" value={ownerId}
+                           onChange={e => setOwnerId(e.target.value)}/>
                 </label>
                 <br/>
-                <input type="submit" value="Submit" />
+                <input type="submit" value="Submit"/>
             </form>
             {dogs.length > 0 ?
                 <div>
@@ -33,8 +38,9 @@ function Walkers(props) {
                                 <p>Breed: {dog.breed}</p>
                                 <p>Gender: {dog.gender}</p>
                                 <p>Birthday: {dog.birthday}</p>
-                                <img src={dog.image} title={dog.image}/>
+                                <img style={{maxWidth: '150px'}} src={dog.image} title={dog.image}/>
                                 <p style={{fontSize: '10px'}}>{dog.id}</p>
+                                <button className="deleteButton" value={dog.id} onClick={deleteDog}>Delete</button>
                             </span>
                         </span>
                     ))

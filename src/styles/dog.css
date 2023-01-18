@@ -31,3 +31,15 @@ input[type="submit"]:hover {
     background-color: #006e21;
 }
 
+.deleteButton {
+    background-color: #e20800;
+    border: black 2px solid;
+
+}
+
+.deleteButton:hover {
+    background-color: #6f0300;
+    cursor: pointer;
+}
+
+

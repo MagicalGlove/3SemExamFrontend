@@ -24,6 +24,11 @@ function MainFacade() {
     const createDog = (dog) => {
         const options = apiFacade.makeOptions("POST", true, dog);
         return fetch (URL + "/api/dog", options).then(handleHttpErrors)
+    }
+
+    const deleteDog = (id) => {
+        const options = apiFacade.makeOptions("DELETE", true);
+        return fetch (URL + "/api/dog/" + id, options).then(handleHttpErrors)
 
     }
 
@@ -31,8 +36,8 @@ function MainFacade() {
     return {
         fetchWalkers,
         fetchDogsFromOwnerId,
-        createDog
-
+        createDog,
+        deleteDog
     }
 }
 
