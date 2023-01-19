@@ -2,12 +2,12 @@
     background-color: powderblue;
     border: darkblue 8px solid;
     border-radius: 8px;
-    width: 250px;
+    width: 267px;
     text-align: center;
    place-items: center;
 
     display: inline-block;
-    /*margin-right: 20px;}*/
+    margin: 20px;
 }
 
 .showEditDog{
