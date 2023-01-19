@@ -4,8 +4,13 @@ import "../styles/overallstyling.css"
 import "../styles/createdog.css"
 
 function Admin(props) {
-    const [id, setId] = useState('');
-
+    const [dogId, setDogId] = useState('');
+    const [ownerId, setOwnerId] = useState('');
+    const [owner, setOwner] = useState({
+        name: '',
+        address: '',
+        phone: '',
+    });
     const [dog, setDog] = useState({
         name: '',
         breed: '',
@@ -18,24 +23,43 @@ function Admin(props) {
         setDog({...dog, [event.target.name]: event.target.value});
     }
 
+    const handleChangeOwner = (event) => {
+        setOwner({...owner, [event.target.name]: event.target.value});
+    }
+
     const submit = () => {
         MFacade.createDog(dog)
     }
 
     const updateDog = () => {
-        console.log(dog, "---", id)
-        MFacade.updateDog(dog, id)
+        MFacade.updateDog(dog, dogId)
+    }
+
+    const connectDogOwner = () => {
+        MFacade.connectDogOwner(dogId, ownerId)
     }
 
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const dog = await MFacade.getDogById(id);
+            const dog = await MFacade.getDogById(dogId);
             setDog(dog);
         } catch (err) {
             console.log(err);
         }
     };
+
+    const handleSubmitOwner = async (e) => {
+        e.preventDefault();
+        try {
+            const owner = await MFacade.getOwnerById(ownerId);
+            setOwner(owner);
+        } catch (err) {
+            console.log(err);
+        }
+    };
+
+
 
     return (
         <div className="createDogDiv">
@@ -94,15 +118,50 @@ function Admin(props) {
                     <form onSubmit={handleSubmit}>
                         <label>
                             Dog ID:
-                            <input type="text" value={id} onChange={e => setId(e.target.value)}/>
+                            <input type="text" value={dogId} onChange={e => setDogId(e.target.value)}/>
                             <br/>
-                            {id}
+                            {dogId}
                         </label>
                         <button type="submit">Fetch Dog</button>
                     </form>
-                    {dog && <div>{JSON.stringify(dog)}</div>}
                 </div>
             </div>
+            <div className="inputBox">
+                <form>
+                    <label>
+                        Name:
+                        <input type="text" name="name" placeholder="Name" value={owner.name}
+                               onChange={handleChangeOwner}/>
+                    </label>
+                    <br/>
+                    <label>
+                        Address:
+                        <input type="text" name="address" placeholder="Address" value={owner.address}
+                               onChange={handleChangeOwner}/>
+                    </label>
+                    <br/>
+                    <label>
+                        Phone:
+                        <input type="text" name="image" placeholder="XXXX XXXX" value={owner.phone}
+                               onChange={handleChangeOwner}/>
+                    </label>
+                </form>
+            </div>
+            <div>
+                <div>
+                    <form onSubmit={handleSubmitOwner}>
+                        <label>
+                            Owner ID:
+                            <input type="text" value={ownerId} onChange={e => setOwnerId(e.target.value)}/>
+                            <br/>
+                            {ownerId}
+                            <br/>
+                        </label>
+                        <button type="submit">Fetch Owner</button>
+                    </form>
+                </div>
+            </div>
+            <button onClick={connectDogOwner}>Connect Dog and Owner - {dogId} - {ownerId}</button>
         </div>
     );
 }

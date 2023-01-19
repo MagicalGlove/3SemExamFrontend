@@ -39,9 +39,21 @@ function MainFacade() {
             .then(res => handleHttpErrors(res))
     }
 
+    function getOwnerById(id){
+        return fetch(URL + "/api/owner/getbyid/" + id)
+            .then(res => handleHttpErrors(res))
+    }
+
+
     const deleteDog = (id) => {
         const options = apiFacade.makeOptions("DELETE", true);
         return fetch (URL + "/api/dog/" + id, options).then(handleHttpErrors)
+    }
+
+
+    const connectDogOwner = (dogId, ownerId) => {
+        const options = apiFacade.makeOptions("put");
+        return fetch (URL + "/api/dog/connectOwner/" + dogId + "/" + ownerId, options).then(handleHttpErrors)
     }
 
 
@@ -51,7 +63,9 @@ function MainFacade() {
         createDog,
         deleteDog,
         updateDog,
-        getDogById
+        getDogById,
+        getOwnerById,
+        connectDogOwner
     }
 }
 
