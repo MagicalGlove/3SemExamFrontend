@@ -49,10 +49,6 @@ function apiFacade() {
         return fetch(URL + "/api/info/admin", options).then(handleHttpErrors);
     }
 
-    const fetchJokes = () => {
-        const options = makeOptions("GET", true);
-        return fetch(URL + "/api/jokes", options).then(handleHttpErrors);
-    }
 
     function makeOptions(method, addToken, body) {
         method = method ? method : 'GET';
@@ -83,7 +79,6 @@ function apiFacade() {
         logout,
         fetchData,
         fetchAdminData,
-        fetchJokes
     }
 }
 

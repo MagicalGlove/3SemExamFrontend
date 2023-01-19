@@ -24,7 +24,6 @@ function Walkers(props) {
     return (
         <div className="outDiv">
             <h1 style={{marginLeft: '20px'}}>Find all the Walkers of a Dog!</h1>
-            <h2 style={{marginLeft: '20px'}}>Type 0 to get all Walkers!</h2>
             <form onSubmit={handleSubmit}>
                 <label>
                     <input type="text" placeholder="Dog Id" value={dogId}

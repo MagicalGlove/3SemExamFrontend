@@ -147,18 +147,21 @@ function Admin(props) {
                     <form>
                         <label>
                             Name:
+                            <br/>
                             <input type="text" name="name" placeholder="Name" value={owner.name}
                                    onChange={handleChangeOwner}/>
                         </label>
                         <br/>
                         <label>
                             Address:
+                            <br/>
                             <input type="text" name="address" placeholder="Address" value={owner.address}
                                    onChange={handleChangeOwner}/>
                         </label>
                         <br/>
                         <label>
                             Phone:
+                            <br/>
                             <input type="text" name="image" placeholder="XXXX XXXX" value={owner.phone}
                                    onChange={handleChangeOwner}/>
                         </label>
