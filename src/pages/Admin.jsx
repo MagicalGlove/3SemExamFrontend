@@ -116,7 +116,7 @@ function Admin(props) {
                                 <label>
                                     Dog ID:
                                     <br/>
-                                    <input type="text" value={dogId} onChange={e => setDogId(e.target.value)}/>
+                                    <input type="text" placeholder="Dog ID" value={dogId} onChange={e => setDogId(e.target.value)}/>
                                 </label>
                                 <br/>
                                 <button className="createAndEditDogsButtons" type="submit">Fetch Dog</button>
@@ -162,7 +162,7 @@ function Admin(props) {
                         <label>
                             Phone:
                             <br/>
-                            <input type="text" name="image" placeholder="XXXX XXXX" value={owner.phone}
+                            <input type="text" name="image" placeholder="Phone" value={owner.phone}
                                    onChange={handleChangeOwner}/>
                         </label>
                     </form>
@@ -173,7 +173,7 @@ function Admin(props) {
                                 <label>
                                     Owner ID:
                                     <br/>
-                                    <input type="text" value={ownerId} onChange={e => setOwnerId(e.target.value)}/>
+                                    <input placeholder="Owner ID" type="text" value={ownerId} onChange={e => setOwnerId(e.target.value)}/>
                                     <br/>
                                 </label>
                                 <button className="createAndEditDogsButtons" type="submit">Fetch Owner</button>
