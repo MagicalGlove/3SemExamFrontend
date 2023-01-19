@@ -44,7 +44,7 @@ function Walkers(props) {
                                 <p>Breed: {dog.breed}</p>
                                 <p>Gender: {dog.gender}</p>
                                 <p>Birthday: {dog.birthday}</p>
-                                <img style={{maxWidth: '150px', maxHeight: '150px', minHeight: '150px'}} src={dog.image} title={dog.image}/>
+                                <img style={{minWidth: '250px', maxWidth: '250px', minHeight: '250px', maxHeight: '250px'}} src={dog.image} title={dog.image}/>
                                 <p style={{fontSize: '10px'}}>{dog.id}</p>
                                 <button className="deleteButton" value={dog.id} onClick={deleteDog}>Delete</button>
                             </span>
