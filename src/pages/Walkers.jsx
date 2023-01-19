@@ -26,7 +26,7 @@ function Walkers(props) {
             <h1 style={{marginLeft: '20px'}}>Find all the Walkers of a Dog!</h1>
             <form onSubmit={handleSubmit}>
                 <label>
-                    <input type="text" placeholder="Dog Id" value={dogId}
+                    <input type="text" placeholder="Dog ID" value={dogId}
                            onChange={e => setDogId(e.target.value)}/>
                 </label>
                 <br/>
