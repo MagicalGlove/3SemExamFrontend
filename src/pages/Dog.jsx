@@ -39,7 +39,7 @@ function Walkers(props) {
                 <div>
                     {dogs.map((dog, index) => (
                         <span key={index}>
-                            <span className="walkerCards">
+                            <span className="dogCards">
                                 <h2>{dog.name}</h2>
                                 <p>Breed: {dog.breed}</p>
                                 <p>Gender: {dog.gender}</p>

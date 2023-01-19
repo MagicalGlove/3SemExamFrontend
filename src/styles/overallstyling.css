@@ -2,6 +2,19 @@
     background-color: powderblue;
     border: darkblue 8px solid;
     border-radius: 8px;
+    width: 250px;
+    text-align: center;
+    margin: 10px;
+
+
+    display: inline-block;
+    /*margin-right: 20px;}*/
+}
+
+.dogCards{
+    background-color: powderblue;
+    border: darkblue 8px solid;
+    border-radius: 8px;
     width: 400px;
     text-align: center;
     margin: 10px;

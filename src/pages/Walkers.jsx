@@ -2,10 +2,11 @@ import React, {useEffect, useState} from 'react';
 import MainFacade from "../utils/MainFacade.js";
 import "../styles/overallstyling.css"
 import {Link, NavLink, Outlet} from "react-router-dom";
+import dog from "./Dog.jsx";
 
 function Walkers(props) {
     const [walkers, setWalkers] = useState("");
-
+    const [dogId, setDogId] = useState("");
 
     useEffect(() => {
         // console.log("Yay, I'm here!")
@@ -13,13 +14,27 @@ function Walkers(props) {
             .then(res => setWalkers(res))
     }, []);
 
-    console.log("Im the walkers ", walkers)
+    const handleSubmit = e => {
+        e.preventDefault();
+        MainFacade.fetchWalkersFromDogId(dogId)
+            .then(res => setWalkers(res))
+    }
+
 
     return (
-        <div>
-            <h1 style={{marginLeft: '20px'}}>All Walkers</h1>
+        <div className="outDiv">
+            <h1 style={{marginLeft: '20px'}}>Find all the Walkers of a Dog!</h1>
+            <h2 style={{marginLeft: '20px'}}>Type 0 to get all Walkers!</h2>
+            <form onSubmit={handleSubmit}>
+                <label>
+                    <input type="text" placeholder="Dog Id" value={dogId}
+                           onChange={e => setDogId(e.target.value)}/>
+                </label>
+                <br/>
+                <input type="submit" value="Submit"/>
+            </form>
             {walkers.length > 0 ?
-                <>
+                <div>
                     {walkers.map((walker, index) => (
                         <span key={index}>
                             <span className="walkerCards">
@@ -33,7 +48,7 @@ function Walkers(props) {
                         </span>
                     ))
                     }
-                </>
+                </div>
                 :
                 <div>
                     <h1>
