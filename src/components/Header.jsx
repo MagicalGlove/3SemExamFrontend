@@ -17,8 +17,8 @@ function Header({setErrorMsg, loggedIn, setLoggedIn, setUsername, username, role
             <NavLink to="/jokes"><i className="fa fa-fw fa-envelope"></i> Jokes</NavLink>
             {!loggedIn ? (<Login setRoles={setRoles} setUsername={setUsername} setLoggedIn={setLoggedIn} setErrorMsg={setErrorMsg}  />) :
                 (<>
-                    <NavLink to="/user"><i className="fa fa-fw"></i> User</NavLink>
-                    <NavLink to="/admin"><i className="fa fa-fw"></i> Admin</NavLink>
+                    <NavLink to="/user">User</NavLink>
+                    <NavLink to="/admin">Admin</NavLink>
                     <div>
                     <Credentials username={username} roles={roles}/>
                     <LoggedIn setLoggedIn={setLoggedIn}/>
