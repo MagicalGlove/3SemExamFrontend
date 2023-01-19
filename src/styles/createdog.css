@@ -4,18 +4,8 @@
 
 }
 
-.adminPageContainer {
-    display: flex;
+.container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
-.adminPageBox {
-    flex: 1;
-}
-
-
-/*.parent{*/
-/*    display: flex;*/
-/*}*/
-/*.child {*/
-/*    margin-right: 10px;*/
-/*}*/

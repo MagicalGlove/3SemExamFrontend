@@ -4,8 +4,20 @@
     border-radius: 8px;
     width: 250px;
     text-align: center;
-    margin: 10px;
+   place-items: center;
 
+    display: inline-block;
+    /*margin-right: 20px;}*/
+}
+
+.showEditDog{
+    background-color: powderblue;
+    border: darkblue 8px solid;
+    border-radius: 8px;
+    width: 100%;
+    height: 65%;
+    text-align: center;
+    place-items: center;
 
     display: inline-block;
     /*margin-right: 20px;}*/
@@ -25,15 +37,16 @@
 }
 
 .outerDiv {
-
-    display: flex;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
 }
 
 .createAndEditDogsBox {
     border: #001162 6px solid;
     border-radius: 8px;
     background: powderblue;
-    width: 350px;
+    width: 95%;
+    height: 100%;
     margin: 2.5%;
     padding: 15px;
 }

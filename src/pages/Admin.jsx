@@ -102,70 +102,83 @@ function Admin(props) {
                         </label>
                         <br/>
                     </form>
-                    <button style={{float: 'left'}} className="createAndEditDogsButtons" onClick={submit}>Create Dog!</button>
-                    <button style={{float: 'right'}} className="createAndEditDogsButtons" onClick={updateDog}>Edit Dog!</button>
+                    <button style={{float: 'left'}} className="createAndEditDogsButtons" onClick={submit}>Create Dog!
+                    </button>
+                    <button style={{float: 'right'}} className="createAndEditDogsButtons" onClick={updateDog}>Edit
+                        Dog!
+                    </button>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <div>
+                        <div>
+                            <form onSubmit={handleSubmit}>
+                                <label>
+                                    Dog ID:
+                                    <br/>
+                                    <input type="text" value={dogId} onChange={e => setDogId(e.target.value)}/>
+                                </label>
+                                <br/>
+                                <button className="createAndEditDogsButtons" type="submit">Fetch Dog</button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
                 <div>
                      <span>
-                            <span className="walkerCards">
+                            <span className="showEditDog">
                                 <h2>{dog.name}</h2>
                                 <p>Breed: {dog.breed}</p>
                                 <p>Gender: {dog.gender}</p>
                                 <p>Birthday: {dog.birthday}</p>
-                                <img style={{minWidth: '150px', maxWidth: '150px'}} src={dog.image} title={dog.image}/>
+                                <img style={{
+                                    minWidth: '250px',
+                                    maxWidth: '250px',
+                                    minHeight: '200px',
+                                    maxHeight: '200px'
+                                }} src={dog.image} title={dog.image}/>
                             </span>
                      </span>
+                    <div style={{textAlign: 'center'}}>
+                    <button style={{width: '200px'}} className="createAndEditDogsButtons" onClick={connectDogOwner}>Connect Dog {dogId} and Owner {ownerId}</button>
+                    </div>
                 </div>
-            </div>
-            <div>
-                <div>
-                    <form onSubmit={handleSubmit}>
+                <div className="createAndEditDogsBox">
+                    <form>
                         <label>
-                            Dog ID:
-                            <input type="text" value={dogId} onChange={e => setDogId(e.target.value)}/>
-                            <br/>
-                            {dogId}
+                            Name:
+                            <input type="text" name="name" placeholder="Name" value={owner.name}
+                                   onChange={handleChangeOwner}/>
                         </label>
-                        <button type="submit">Fetch Dog</button>
-                    </form>
-                </div>
-            </div>
-            <div className="createAndEditDogsBox">
-                <form>
-                    <label>
-                        Name:
-                        <input type="text" name="name" placeholder="Name" value={owner.name}
-                               onChange={handleChangeOwner}/>
-                    </label>
-                    <br/>
-                    <label>
-                        Address:
-                        <input type="text" name="address" placeholder="Address" value={owner.address}
-                               onChange={handleChangeOwner}/>
-                    </label>
-                    <br/>
-                    <label>
-                        Phone:
-                        <input type="text" name="image" placeholder="XXXX XXXX" value={owner.phone}
-                               onChange={handleChangeOwner}/>
-                    </label>
-                </form>
-            </div>
-            <div>
-                <div>
-                    <form onSubmit={handleSubmitOwner}>
+                        <br/>
                         <label>
-                            Owner ID:
-                            <input type="text" value={ownerId} onChange={e => setOwnerId(e.target.value)}/>
-                            <br/>
-                            {ownerId}
-                            <br/>
+                            Address:
+                            <input type="text" name="address" placeholder="Address" value={owner.address}
+                                   onChange={handleChangeOwner}/>
                         </label>
-                        <button type="submit">Fetch Owner</button>
+                        <br/>
+                        <label>
+                            Phone:
+                            <input type="text" name="image" placeholder="XXXX XXXX" value={owner.phone}
+                                   onChange={handleChangeOwner}/>
+                        </label>
                     </form>
+                    <br/>
+                    <div>
+                        <div>
+                            <form onSubmit={handleSubmitOwner}>
+                                <label>
+                                    Owner ID:
+                                    <br/>
+                                    <input type="text" value={ownerId} onChange={e => setOwnerId(e.target.value)}/>
+                                    <br/>
+                                </label>
+                                <button className="createAndEditDogsButtons" type="submit">Fetch Owner</button>
+                            </form>
+                        </div>
+                    </div>
                 </div>
             </div>
-            <button onClick={connectDogOwner}>Connect Dog and Owner - {dogId} - {ownerId}</button>
         </div>
     );
 }
