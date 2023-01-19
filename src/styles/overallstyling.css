@@ -24,15 +24,32 @@
     /*margin-right: 20px;}*/
 }
 
-.inputBox {
-    border: black 4px solid;
-    width: 300px;
-    margin: 2.5%;
-
-}
-
 .outerDiv {
 
     display: flex;
+}
+
+.createAndEditDogsBox {
+    border: #001162 6px solid;
+    border-radius: 8px;
+    background: powderblue;
+    width: 350px;
+    margin: 2.5%;
+    padding: 15px;
+}
+
+.createAndEditDogsButtons {
+    background: linear-gradient(90deg, #00d6ff, #00b0cf, #00869b);
+    border: black 2px solid;
+    border-radius: 4px;
+    width: 100px;
+    height: 40px;
+}
+
+.createAndEditDogsButtons:hover {
+    background: linear-gradient(90deg, #005982, #004a6b, #003c56);
+    color: white;
+    transition-duration: 1.5s;
+    cursor: pointer;
 }
 

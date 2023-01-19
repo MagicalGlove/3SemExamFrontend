@@ -34,6 +34,9 @@ input[type="submit"]:hover {
 .deleteButton {
     background-color: #e20800;
     border: black 2px solid;
+    border-radius: 4px;
+    width: 100px;
+    height: 40px;
 
 }
 

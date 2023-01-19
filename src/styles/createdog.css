@@ -1,7 +1,17 @@
 .createDogDiv {
-    float: left;
-    margin-right: 10px; /* this will add a 10px gap between the two divs */
+    /*float: left;*/
+    /*margin-right: 10px; !* this will add a 10px gap between the two divs *!*/
+
 }
+
+.adminPageContainer {
+    display: flex;
+}
+
+.adminPageBox {
+    flex: 1;
+}
+
 
 /*.parent{*/
 /*    display: flex;*/

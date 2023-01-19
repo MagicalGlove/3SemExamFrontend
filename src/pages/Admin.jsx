@@ -60,46 +60,50 @@ function Admin(props) {
     };
 
 
-
     return (
         <div className="createDogDiv">
             <h1 style={{marginLeft: '2.5%'}}>Create or Update a dog!</h1>
             <div className="outerDiv">
-                <div className="inputBox">
+                <div className="createAndEditDogsBox">
                     <form>
                         <label>
                             Name:
+                            <br/>
                             <input type="text" name="name" placeholder="Fluffy" value={dog.name}
                                    onChange={handleChange}/>
                         </label>
                         <br/>
                         <label>
                             Breed:
+                            <br/>
                             <input type="text" name="breed" placeholder="Maltese" value={dog.breed}
                                    onChange={handleChange}/>
                         </label>
                         <br/>
                         <label>
                             Image:
+                            <br/>
                             <input type="text" name="image" placeholder="Example.com/dog.jpg" value={dog.image}
                                    onChange={handleChange}/>
                         </label>
                         <br/>
                         <label>
                             Gender:
+                            <br/>
                             <input type="text" name="gender" placeholder="Male/Female" value={dog.gender}
                                    onChange={handleChange}/>
                         </label>
                         <br/>
                         <label>
                             Birthday:
+                            <br/>
                             <input type="text" name="birthday" placeholder="Day/Month-Year" value={dog.birthday}
                                    onChange={handleChange}/>
                         </label>
                         <br/>
                     </form>
-                    <button onClick={submit}>Create Dog!</button>
-                    <button onClick={updateDog}>Edit Dog!</button>
+                    <button style={{float: 'left'}} className="createAndEditDogsButtons" onClick={submit}>Create Dog!</button>
+                    <button style={{float: 'right'}} className="createAndEditDogsButtons" onClick={updateDog}>Edit Dog!</button>
                 </div>
                 <div>
                      <span>
@@ -126,7 +130,7 @@ function Admin(props) {
                     </form>
                 </div>
             </div>
-            <div className="inputBox">
+            <div className="createAndEditDogsBox">
                 <form>
                     <label>
                         Name:
