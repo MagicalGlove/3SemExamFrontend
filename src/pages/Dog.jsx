@@ -8,7 +8,6 @@ function Walkers(props) {
     const [ownerId, setOwnerId] = useState("");
 
     useEffect(() => {
-        // console.log("Yay, I'm here!")
         MainFacade.fetchDogsFromOwnerId(0)
             .then(res => setDogs(res))
     }, []);
@@ -21,7 +20,12 @@ function Walkers(props) {
 
     const deleteDog = (evt) => {
         MainFacade.deleteDog(evt.target.value)
+            // .then(() => {
+            //     MainFacade.fetchDogsFromOwnerId(ownerId)
+            //         .then(res => setDogs(res))
+            // })
     }
+
 
     return (
         <div className="outDiv">
